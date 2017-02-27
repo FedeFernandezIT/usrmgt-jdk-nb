@@ -1,2 +1,2 @@
-# usrmgt-jdk-nb
+# User Management
 RESTfull resource for user authentication
