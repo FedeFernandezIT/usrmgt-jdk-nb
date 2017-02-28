@@ -9,6 +9,6 @@ package com.nunait.usrmgt;
  *
  * @author Federico
  */
-public interface User {
+public interface UserDetails {
     
 }
