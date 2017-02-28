@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Federico.
+ * Copyright 2017 NunaIT.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Federico
+/** 
+ * 
+ * @author Federico Fernandez | fede.fernandez.it@gmail.com
+ * @created 27 de febrero de 2017 18:29:22 ART
  */
 public class UserDetailsTest {
     
