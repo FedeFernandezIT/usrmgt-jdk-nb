@@ -16,10 +16,29 @@
 package com.nunait.usrmgt;
 
 /** 
- * 
+ * (ES) Proporciona información básica del usuario.
+ * <p>
+ * (EN) Provides core user information.
+ * <p> 
  * @author Federico Fernandez | fede.fernandez.it@gmail.com
  * @created 27 de febrero de 2017 18:19:22 ART
  */
 public interface UserDetails {
     
+    /**
+     * (ES) Retorna el username utilizado para autenticar al usuario. No puede ser <code>null</code>.
+     * <p>
+     * (EN) Returns the username used to authenticate the user. Can't be <code>null</code>.
+     * @return username (never <code>null</code>)
+     */
+    String getUsername();
+    
+    /**
+     * (ES) Retorna la contraseña utilizada para autenticar al usuario.
+     * <p>
+     * (EN) Returns the password used to authenticate the user.
+     * <p>
+     * @return username (never null)
+     */
+    String getPassword();
 }
