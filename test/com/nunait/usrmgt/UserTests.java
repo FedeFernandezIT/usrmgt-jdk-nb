@@ -56,6 +56,32 @@ public class UserTests {
     }
 
     @Test
+    public void testNoArgConstructorDoesntExist() {
+        Class<User> clazz = User.class;
+        
+        try {
+            clazz.getDeclaredConstructor((Class[]) null );
+            fail( "Should have thrown NoSuchMethodException" );
+        } catch ( NoSuchMethodException expectated ) {            
+        }
+    }
+    
+    @Test
+    public void testNullValuesRejected() {
+        try {
+            new User( null, "plate" );
+            fail( "Should have thrown IllegalArgumentException" );
+        } catch ( IllegalArgumentException expectated ) {
+        }
+
+        try {
+            new User( "river", null );
+            fail( "Should have thrown IllegalArgumentException" );
+        } catch ( IllegalArgumentException expectated ) {
+        }
+    }
+    
+    @Test
     public void testUserGetter() {
         assertEquals( "river", user.getUsername() );
         assertEquals( "plate", user.getPassword() );

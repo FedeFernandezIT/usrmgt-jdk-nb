@@ -32,17 +32,20 @@ public class User implements UserDetails {
     private final String username;
     
     // ~ Constructors
-    // =======================================================================
-    
+    // =======================================================================    
     public User( String username, String password ) {
+        if ( username == null || username.isEmpty() || password == null ) {
+            throw new IllegalArgumentException(
+                    "No se pueden pasar valores null o empty al constructor");
+        }
+        
         this.username = username;
         this.password = password;
     }
     
     
     // ~ Methods
-    // =======================================================================
-    
+    // =======================================================================    
     @Override
     public String getUsername() {
         return username;
