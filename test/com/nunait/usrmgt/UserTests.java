@@ -23,21 +23,28 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /** 
+ * Prueba la performance de User (POJO)
  * 
  * @author Federico Fernandez | fede.fernandez.it@gmail.com
  * @created 27 de febrero de 2017 18:29:22 ART
  */
-public class UserDetailsTest {
+public class UserTests {
     
-    public UserDetailsTest() {
+    private static UserDetails user;
+    
+    public UserTests() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println( "* UserTests: @BeforeClass" );
+        user = new User( "river", "plate" );
     }
     
     @AfterClass
     public static void tearDownClass() {
+        System.out.println( "* UserTests: @AfterClass" );
+        user = null;        
     }
     
     @Before
@@ -49,9 +56,9 @@ public class UserDetailsTest {
     }
 
     @Test
-    public void test() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail( "The test case is a prototype." );
+    public void testUserGetter() {
+        assertEquals( "river", user.getUsername() );
+        assertEquals( "plate", user.getPassword() );
     }
     
 }
