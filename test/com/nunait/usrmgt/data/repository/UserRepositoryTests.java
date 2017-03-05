@@ -33,7 +33,7 @@ public class UserRepositoryTests {
        
     @Test
     public void testRepositorySave() {
-       Repository repository = new Repository();
+       UserRepository repository = new UserRepository();
        
        repository.save( new User("river", "plate" ));
        
