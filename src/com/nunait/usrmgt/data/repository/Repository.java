@@ -16,28 +16,17 @@
 
 package com.nunait.usrmgt.data.repository;
 
-import com.nunait.usrmgt.User;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
 /** 
- * (ES)
- * <p>
- * (EN)
- * <p>
+ * (ES) Interfaz básica de un Repositorio. Captura el tipo de entidad del
+ * dominio que gestiona. <p>
+ * (EN) Basic interface of a Repository. Captures the entity type of  the domain
+ * that it manages.<p>
+ * @param <T> entity type of the domain that the repository manages.
  * @author Federico Fernandez | fede.fernandez.it@gmail.com
- * @created 3 de marzo de 2017 12:42:02 ART
+ * @created 5 de marzo de 2017 9:58:53 ART
  */
-public class Repository {
-    private Collection<User> dao = new HashSet<>();
-    
-    public void save(User user) {
-        dao.add( user );
-    }
-    
-    public int size() {
-        return dao.size();
-    }
+public interface Repository <T> {
+
+    void save(T entity);
+
 }
