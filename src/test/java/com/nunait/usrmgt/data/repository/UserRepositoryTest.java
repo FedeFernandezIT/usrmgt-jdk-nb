@@ -13,31 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.nunait.usrmgt.data.repository;
 
 import com.nunait.usrmgt.User;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
-/** 
- * (ES)
- * <p>
- * (EN)
- * <p>
- * @author Federico Fernandez | fede.fernandez.it@gmail.com
- * @created 3 de marzo de 2017 12:42:02 ART
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Federico Fernandez
  */
-public class Repository {
-    private Collection<User> dao = new HashSet<>();
+public class UserRepositoryTest {
     
-    public void save(User user) {
-        dao.add( user );
-    }
-    
-    public int size() {
-        return dao.size();
+    @Test
+    public void testRepositorySave() {
+       UserRepository repository = new UserRepository();
+       
+       repository.save( new User("river", "plate" ));
+       
+       assertEquals( 1, repository.size() );
+               
     }
 }

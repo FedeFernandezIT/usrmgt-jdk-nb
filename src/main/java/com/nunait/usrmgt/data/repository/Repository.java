@@ -16,29 +16,17 @@
 
 package com.nunait.usrmgt.data.repository;
 
-import com.nunait.usrmgt.User;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 /** 
- * (ES)
- * <p>
- * (EN)
- * <p>
+ * (ES) Interfaz básica de un Repositorio. Captura el tipo de entidad del
+ * dominio que gestiona. <p>
+ * (EN) Basic interface of a Repository. Captures the entity type of  the domain
+ * that it manages.<p>
+ * @param <T> entity type of the domain that the repository manages.
  * @author Federico Fernandez | fede.fernandez.it@gmail.com
- * @created 2 de marzo de 2017 17:36:47 ART
+ * @created 5 de marzo de 2017 9:58:53 ART
  */
-public class UserRepositoryTests {    
-       
-    @Test
-    public void testRepositorySave() {
-       Repository repository = new Repository();
-       
-       repository.save( new User("river", "plate" ));
-       
-       assertEquals( 1, repository.size() );
-               
-    }
-    
+public interface Repository <T> {
+
+    void save(T entity);
+
 }
