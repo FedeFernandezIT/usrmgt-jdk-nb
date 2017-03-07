@@ -32,36 +32,22 @@ import static org.junit.Assert.*;
  * @author Federico Fernandez
  */
 public class JdbcTest {
-    
-    public JdbcTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
+    private static final String URL_CONNECTION =
+            "jdbc:h2:mem:test;" +
+            "INIT=runscript from 'classpath:/scripts/h2-schema.sql';" +
+            "DB_CLOSE_DELAY=-1";
+        
+    private Connection conn = null;
+        
     @Test
     public void testConnection() throws ClassNotFoundException {
         Class.forName( "org.h2.Driver" );
         try {        
-            Connection conn = DriverManager.getConnection( "jdbc:h2:mem:test" );
-            conn.close();
-        } catch ( SQLException ex ) {                        
+            Connection conn = DriverManager.
+                    getConnection( URL_CONNECTION );            
+            conn.close();            
+        } catch ( SQLException ex ) {      
+            fail( "Connection fail" );
         }        
     }
 }
